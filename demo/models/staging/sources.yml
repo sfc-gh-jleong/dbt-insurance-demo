@@ -1,0 +1,76 @@
+version: 2
+
+sources:
+  - name: raw
+    database: INSURANCE_DEMO
+    schema: RAW
+    tables:
+      - name: raw_agencies
+        description: Raw agency data
+        columns:
+          - name: agency_id
+            description: Primary key for agency
+          - name: agency_name
+            description: Name of the agency
+          - name: status
+            description: Current status of agency
+          - name: updated_date
+            description: Last update timestamp
+
+      - name: raw_agents
+        description: Raw agent data
+        columns:
+          - name: agent_id
+            description: Primary key for agent
+          - name: agency_id
+            description: Foreign key to agency
+          - name: status
+            description: Current status of agent
+          - name: updated_date
+            description: Last update timestamp
+
+      - name: raw_customers
+        description: Raw customer data
+        columns:
+          - name: customer_id
+            description: Primary key for customer
+          - name: status
+            description: Current status of customer
+          - name: updated_date
+            description: Last update timestamp
+
+      - name: raw_policies
+        description: Raw policy data
+        columns:
+          - name: policy_id
+            description: Primary key for policy
+          - name: customer_id
+            description: Foreign key to customer
+          - name: agent_id
+            description: Foreign key to agent
+          - name: agency_id
+            description: Foreign key to agency
+          - name: updated_date
+            description: Last update timestamp
+
+      - name: raw_claims
+        description: Raw claims data
+        columns:
+          - name: claim_id
+            description: Primary key for claim
+          - name: policy_id
+            description: Foreign key to policy
+          - name: customer_id
+            description: Foreign key to customer
+          - name: updated_date
+            description: Last update timestamp
+
+      - name: raw_policy_coverages
+        description: Raw policy coverage data
+        columns:
+          - name: coverage_id
+            description: Primary key for coverage
+          - name: policy_id
+            description: Foreign key to policy
+          - name: updated_date
+            description: Last update timestamp

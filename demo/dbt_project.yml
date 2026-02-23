@@ -14,6 +14,15 @@ macro-paths:
   - macros
 snapshot-paths:
   - snapshots
+
 models:
   demo:
-    +materialized: view
+    staging:
+      +schema: STAGING
+      +materialized: view
+    refined:
+      +schema: REFINED
+      +materialized: view
+    curated:
+      +schema: CURATED
+      +materialized: table
