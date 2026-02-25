@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: sv_insurance_analytics
+    description: |
+      Semantic view for insurance analytics that enables natural language queries via Cortex Analyst.
+      
+      This semantic view joins customer, policy, claims, agent, and agency data to provide
+      a unified analytics layer for business users.
+      
+      **Example Natural Language Queries:**
+      - "What is the total premium by policy type?"
+      - "Show me the top 10 customers by claim amount"
+      - "What is the average days to settle claims by state?"
+      - "Which agents have the highest premium volume?"
+      - "What is the loss ratio by agency?"
+      
+      **Tables Included:**
+      - customers (dim_customer)
+      - policies (fct_policy)
+      - claims (fct_claim)
+      - agents (dim_agent)
+      - agencies (dim_agency)
+    config:
+      materialized: semantic_view

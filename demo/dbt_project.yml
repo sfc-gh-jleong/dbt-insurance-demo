@@ -26,3 +26,6 @@ models:
     curated:
       +schema: CURATED
       +materialized: table
+    semantic:
+      +schema: CURATED
+      +materialized: semantic_view
