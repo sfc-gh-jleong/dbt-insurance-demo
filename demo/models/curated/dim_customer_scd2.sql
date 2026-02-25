@@ -9,7 +9,7 @@
 {#
     Example SCD Type 2 Dimension using the reusable scd_type2 macro
     
-    This model demonstrates Kent's requirement:
+    This model demonstrates requirement:
     - Process source records with effective dates
     - Automatically expire old records when new versions arrive
     - Collapse multiple unchanged records into single records with appropriate effective/expiration dates
